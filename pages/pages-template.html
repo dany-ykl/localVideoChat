@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/camcoder.ico" type="image/x-icon">
+        <link rel='stylesheet' href='style-room.css'>
+        <title>FastVideoChat</title>    
+    </head>
+    <body>
+        <div class='main-container' id='main-container'>
+                <div ref='line' class='line'>
+                <div class='room'>
+                    <p class='name-room'>Комната: {{ nameRoom }}</p>
+                    <p>Список участников:</p>
+                    <div class='list-part'>
+                        <ul class='list-user'>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class='video-comm'>
+                <video playsinline autoplay id='video-grid' class='video-grid'></video>
+                <video playsinline autoplay id='remote-video'></video>
+                </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+        <script src='./app-room.js'></script>
+        <script src='./test.js'></script>
+    </body>
+</html>

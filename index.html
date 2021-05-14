@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+   <head lang='en'>
+      <meta charset='UTF-8'>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" href="/camcoder.ico" type="image/x-icon">
+      <title>FastVideoChat</title>
+      <link rel='stylesheet' type='text/css' href='/style.css'>
+   </head>
+   <body>
+      <div id='main-container'>
+         <script type='text/x-template' id='modal-template'>
+            <transition name='modal'>
+               <div class='shadow'>
+                  <div class='main-window'>
+                     <h4>Комната создана!</h4>
+                     <div class='content'>
+                        <p>Колличество участников:<span>{{ numberPartPopup }}</span></p>
+                        <p>Пароль:<span>{{ password }}</span></p>
+                        <p>Название:<span>{{ nameRoom }}</span></p>
+                        <p>Админ:<span>{{ adminName }}</span></p>
+                        <div class='link'>
+                           <span id='link-room'>http://FastVideoChat/{{ nameRoom }}</span>
+                           <a id='link-room-btn' v-on:click='copyLink' ><img src='/copy.png' title='Копировать'></a>
+                        </div>
+                        <br>
+                        <button>ПРИСОЕДИНИТЬСЯ</button>
+                     </div>
+                  </div>
+               </div>
+            </transition>
+         </script>
+         <div class='creature-room'>
+            <form>
+            <div class='number-of-part'>
+               <p>Колличество участников<span>(необязательно)</span>:</p>
+               <input type='number' v-model='numberPart'></input>
+            </div>
+            <div class='password-field'>
+               <p>Пароль <span>(необязательно)</span>:</p>
+               <input v-model='password' placeholder="Не более 5 символов"></input>
+            </div>
+            <div class='name-room'>
+               <p>Название комнаты<span>(необязательно)</span>:</p>
+               <input v-model='nameRoom' placeholder='Имя'></input>
+            </div>
+            <div class='admin-name'>
+               <p>Админ<span>(обязательно)</span>:</p>
+               <input v-model='adminName' placeholder='Любой никнейм'></input>
+            </div>
+            <br>
+            <div class='create-room'>
+               <button type='button' v-on:click='createRoom'>СОЗДАТЬ КОМНАТУ</button>
+            </div>
+            </form>
+         </div>
+         <modal v-if="showModal" @close="showModal = false">
+         </modal>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+      <script src='/app.js'></script>
+      <script src="/socket.io/socket.io.js"></script>
+   </body>
+</html>

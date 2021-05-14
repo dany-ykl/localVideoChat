@@ -1,0 +1,126 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family:'Courier New', Courier, monospace;
+}
+
+html, body::after {
+    background-image: url('/mounts.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    opacity: 0.9;
+    height: 100%;
+}
+
+#main-container {
+    padding: 0;
+    margin: 0;
+}
+
+.creature-room {
+    background-color: #ffffff;
+    width: 30%;
+    margin: 70px auto auto auto;
+    padding: 30px 30px;
+    font-size: 16px;
+    box-shadow: 0px 0px 6px 1px  rgb(0, 0, 0, 0.5);
+
+}
+
+span {
+    font-size: 14px;
+}
+
+input {
+    width: 35%;
+    height: 18px;
+
+}
+
+.create-room button {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 8px 15px;
+    outline: none;
+}
+
+.create-room button:hover {
+    background-color: rgb(230, 230, 250, 0.5);
+}
+
+.create-room button:active {
+    transform: scale(0.99);
+}
+
+.creature-room div {
+    margin-top: 20px;
+}
+
+.shadow {
+    width: 100%;
+    height: 100%;
+    background-color:rgb(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.main-window {
+    background-color: #ffffff;
+    width: 30%;
+    margin: 70px auto auto auto;
+    border-radius: 10px;
+    min-width: 300px;
+}
+
+h4 {
+    padding-top: 15px;
+    padding-left: 27%;
+    font-weight: normal;
+    border-bottom: 1px solid black;
+}
+
+.main-window p {
+    font-size: 15px;
+    padding: 18px;
+    margin-top: -20px;
+    padding-left: 25px;
+    font-weight: bold;
+}
+
+.main-window span {
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.link {
+    display: inline-block;
+    padding: 1px 10px;
+    background-color:rgb(128, 128, 128, 0.4);
+    border-radius: 15px;
+    margin-left: 11%;
+}
+
+.link img {
+    display: block;
+    width: 2vw;
+    float: right;
+    padding-left: 10px;
+}
+.link span {
+    display: inline-block;
+    padding-top: 6px;
+}
+
+.main-window button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 5px 15px;
+    margin-left: 30%;
+    margin-right: 40%;
+    outline: none;
+}
